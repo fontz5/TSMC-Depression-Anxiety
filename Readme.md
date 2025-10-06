@@ -1,0 +1,1 @@
+A New Thai Social Media Corpus for Depression and Anxiety Detection with Fine-grained Emotion Intensity Annotations
