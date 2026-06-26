@@ -12,8 +12,9 @@ This corpus is part of the PhD research *"Exploring Emotion Timeline Patterns in
 
 | File | Description |
 |------|-------------|
-| `Dataset/users_annonym.csv` | One row per user with depression and anxiety labels |
-| `Dataset/timelines_annonym.csv` | Chronological tweets per user with emotion-intensity labels |
+| `Dataset/users.csv` | One row per user with depression and anxiety labels |
+| `Dataset/timelines_all.csv` | Chronological tweets per user with emotion-intensity labels with all emotions annotated by annotator |
+| `Dataset/timelines_ds.csv` | Chronological tweets per user with emotion-intensity labels aggregated using Dawid-Skene algorithm |
 
 **Label encoding** — the users file contains both gold string labels (`gold_depression`: `"depressed"`/`"none"`, `gold_anxiety`: `"anxious"`/`"none"`) and binary labels (`depression`/`anxiety`: `0` = absent, `1` = present).
 
@@ -35,12 +36,12 @@ pip install pandas
 import pandas as pd
 
 # Load user-level labels
-users = pd.read_csv("Dataset/users_annonym.csv", index_col=0)
+users = pd.read_csv("Dataset/users.csv", index_col=0)
 
 # Load tweet timelines with emotion-intensity labels
 # created_date has mixed UTC offsets (e.g. +00:00, +01:00) — read as string first,
 # then convert with utc=True to normalise everything to a single UTC-aware dtype
-timelines = pd.read_csv("Dataset/timelines_annonym.csv", index_col=0)
+timelines = pd.read_csv("Dataset/timelines_ds.csv", index_col=0)
 timelines["created_date"] = pd.to_datetime(timelines["created_date"], utc=True)
 
 print(users.head())
@@ -140,6 +141,7 @@ print(user_emotion_profile.head())
 
 ---
 
+<!--
 ## Citation
 
 If you use this dataset in your research, please cite:
@@ -157,5 +159,4 @@ publisher = "Lancaster University",
 school = "Computing and Communications, Lancaster University",
 }
 ```
-
-
+--!>
