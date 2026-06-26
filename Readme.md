@@ -6,7 +6,7 @@
 
 ## Overview
 
-This corpus is part of the PhD research *"Exploring Emotion Timeline Patterns in Social Media for Automatic Identification of Depression and Anxiety."* It contains chronological tweets from Thai users, where each user is labelled for the presence or absence of depression and anxiety. Each tweet is further annotated with emotion-intensity scores across 26 fine-grained emotion categories, labelled manually by human experts.
+This corpus contains chronological tweets from Thai users, where each user is labelled for the presence or absence of depression and anxiety. Each tweet is further annotated with emotion-intensity scores across 26 fine-grained emotion categories, labelled manually by human experts.
 
 ### Dataset Files
 
